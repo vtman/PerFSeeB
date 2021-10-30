@@ -25,7 +25,26 @@ If there are several mutations, then using contiguous chunks of symbols to ident
 
 For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed.
 
-&#10003;
+
+<table>
+  <tr><th>Seq 1</th><th><tt>TTGGAGATCG</tt></th></tr>
+  <tr><th>Seq 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
+  <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th></tr>
+  <tr><th>&#10004;</th><th><tt>TAGGTGCTCG______</tt></th></tr>
+  
+  <tr><th><tt>_101101___</tt></th><th><tt>_T_GA_A___</tt></th></tr>
+  <tr><th>&#10060;</th><th><tt>_A_GT_C___</tt></th></tr>
+  
+  <tr><th><tt>__101101__</tt></th><th><tt>__G_AG_T__</tt></th></tr>
+  <tr><th>&#10060;</th><th><tt>__G_TG_T__</tt></th></tr>
+  
+  <tr><th><tt>___101101_</tt></th><th><tt>___G_GA_C_</tt></th></tr>
+  <tr><th>&#10060;</th><th><tt>___G_GC_C_</tt></th></tr>
+  
+  <tr><th><tt>____101101</tt></th><th><tt>____A_AT_G</tt></th></tr>
+  <tr><th>&#10060;</th><th><tt>____T_CT_G</tt></th></tr>
+</table>
+
 
 <table>
   <tr><th>Seq 1</th><th><tt>TTGGAGATCG</tt></th></tr>
