@@ -31,8 +31,8 @@ Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cann
   <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
   <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th><th></th></tr>
   <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th><th><tt>TAGG______</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th><th><tt>_AGGT____</tt></th><th>&#10060;</th></tr>
-  <tr><th><tt>__1111____</tt></th><th><tt>__GGAG____</tt></th><th><tt>__GGTG___</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th><th><tt>_AGGT_____</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>__1111____</tt></th><th><tt>__GGAG____</tt></th><th><tt>__GGTG____</tt></th><th>&#10060;</th></tr>
   <tr><th><tt>___1111___</tt></th><th><tt>___GAGA___</tt></th><th><tt>___GTGC___</tt></th><th>&#10060;</th></tr>
   <tr><th><tt>____1111__</tt></th><th><tt>____AGAT__</tt></th><th><tt>____TGCT__</tt></th><th>&#10060;</th></tr> 
   <tr><th><tt>_____1111_</tt></th><th><tt>_____GATC_</tt></th><th><tt>_____GCTC_</tt></th><th>&#10060;</th></tr>
@@ -40,7 +40,7 @@ Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cann
 </table>
 
 
-However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call this seed a <i>spaced seed</i>), then there is one position when two seqeunces are fully matched.
+However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call this seed a <i>spaced seed</i>), then there is one position when two sequences are fully matched.
 
 <table>
   <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
