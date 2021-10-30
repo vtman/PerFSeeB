@@ -32,8 +32,8 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
   <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>TAGG______</tt></th></tr>
   
-  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA___</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>_AGGT______</tt></th></tr>
+  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA____</tt></th></tr>
+  <tr><th>&#10060;</th><th><tt>_AGGT____</tt></th></tr>
   
   <tr><th><tt>__1111____</tt></th><th><tt>__GGAG___</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>__GGTG___</tt></th></tr>
