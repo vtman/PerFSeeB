@@ -1,0 +1,9 @@
+Length of reads: 26
+Number of mismatches: 8
+Minimum weight: 3
+1101	3
+1011	3
+11001	3
+10011	3
+101001	3
+100101	3
