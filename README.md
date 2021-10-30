@@ -9,9 +9,11 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
 and a read
 <tt>TAGGAGCCAT</tt>. We shift the read with respect to the reference sequence, so
 
-<tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt>
-
-<tt>_______________TAGGAGCCAT___________________</tt>
-
+<table>
+  <tr>
+   <th><tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt></th>
+    <th><tt>_______________TAGGAGCCAT___________________</tt></th>
+</tr>
+</table>
 And
 
