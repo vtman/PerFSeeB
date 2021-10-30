@@ -1,0 +1,11 @@
+Length of reads: 19
+Number of mismatches: 4
+Minimum weight: 4
+11101	4
+11011	4
+10111	4
+111001	4
+100111	4
+1011001	4
+1001101	4
+11000000011	4
