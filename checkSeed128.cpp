@@ -1,8 +1,6 @@
-#include <stdio.h>
 #include <iostream>
 
-#include <xmmintrin.h>
-#include <immintrin.h>
+#include <smmintrin.h>
 #include <emmintrin.h>
 
 inline long long areSame(__m128i *m1, __m128i *m2, int nR) {
@@ -244,7 +242,6 @@ int main(int argc, char* argv[]) {
 				}
 				if (areSame(uRes + (nq + 1)*nR, uRes + nq*nR, nR) == 0)break;
 			}
-			//printf("%i\t%i\n", ip[0], ip[1]);
 			if (areSame(uRes +(nq + 1)*nR, pmOO, nR) == 0) {
 				isOk = false;
 				break;
@@ -262,16 +259,13 @@ int main(int argc, char* argv[]) {
 		for (int i = 0; i < nMismatches; i++) {
 			while (indOld[ip[i]] > ind) {
 				outLine[ind] = '_';
-				//printf("_");
 				ind++;
 			}
 			outLine[ind] = 'X';
-			//printf("X");
 			ind++;
 		}
 		while (ind < readLen) {
 			outLine[ind] = '_';
-			//printf("_");
 			ind++;
 		}
 		printf("%s\n", outLine);
