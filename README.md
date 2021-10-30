@@ -52,7 +52,7 @@ However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call th
   <tr><th><tt>____101101</tt></th><th><tt>____A_AT_G</tt></th><th><tt>____T_CT_G</tt></th><th>&#10060;</th></tr>
 </table>
 
-<h2>checkSeed128: Check if a seed is valid</h2>
+<h2>checkSeedClassic/checkSeed128: Check if a seed is valid</h2>
 Suppose we are given a seed of length <tt>L</tt>. We also know the maximum number <tt>m</tt> of mismatches and read's length <tt>r</tt>. We create <tt>T = r-L+1</tt> rows and pad the seed with 0s (just adding extra zero to the left for each new row and removing one zero from the right). A seed is valid if for any arbitrary <tt>m</tt> columns of the matrix there is at least one row such that all corresponding elements are zeros.
 
 <h3>Parameters</h3>
@@ -79,4 +79,6 @@ For the output we get the matrix and information about seed's validity. If the s
   <tr><th><tt>___|X___|X_|X_____</tt></th></tr>
 </table>
 
+
+checkSeed128 is a faster version based on SIMD instructions.
 
