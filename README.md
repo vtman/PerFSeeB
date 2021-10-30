@@ -28,7 +28,7 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
 Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cannot be used to find candidate position, since there are no all same symbols defiend by a shifted seed.
 
 <table>
-  <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
+  <tr><th>Seed</th><th>Seq 1</th><th>Seq 2</th><th></th></tr>
   <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th><th></th></tr>
   <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th><th><tt>TAGG______</tt></th><th>&#10060;</th></tr>
   <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th><th><tt>_AGGT_____</tt></th><th>&#10060;</th></tr>
@@ -43,7 +43,7 @@ Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cann
 However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call this seed a <i>spaced seed</i>), then there is one position when two sequences are fully matched.
 
 <table>
-  <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
+  <tr><th>Seed</th><th>Seq 1</th><th>Seq 2</th><th></th></tr>
   <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th><th></th></tr>
   <tr><th><tt>101101____</tt></th><th><tt>T_GG_G____</tt></th><th><tt>T_GG_G____</tt></th><th>&#10004;</th></tr>  
   <tr><th><tt>_101101___</tt></th><th><tt>_T_GA_A___</tt></th><th><tt>_A_GT_C___</tt></th><th>&#10060;</th></tr>
