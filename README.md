@@ -10,10 +10,9 @@ and a read
 <tt>TAGGAGCCAT</tt>. We shift the read with respect to the reference sequence, so
 
 <table>
-  <tr>
-   <th><tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt></th>
-    <th><tt>_______________TAGGAGCCAT___________________</tt></th>
-</tr>
+  <tr><th><tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt></th></tr>
+  <tr><th><tt>_______________TAGGAGCCAT___________________</tt></th></tr>
 </table>
-And
+
+
 
