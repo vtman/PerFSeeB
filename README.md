@@ -30,27 +30,12 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
   <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
   <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th></tr>
   <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th><th><tt>TAGG______</tt></th><th>&#10060;</th></tr>
-
-  
-  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>_AGGT____</tt></th></tr>
-  
-  <tr><th><tt>__1111____</tt></th><th><tt>__GGAG____</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>__GGTG___</tt></th></tr>
-  
-  <tr><th><tt>___1111___</tt></th><th><tt>___GAGA___</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>___GTGC___</tt></th></tr>
-  
-  <tr><th><tt>____1111__</tt></th><th><tt>____AGAT__</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>____TGCT__</tt></th></tr>
-  
-  <tr><th><tt>_____1111_</tt></th><th><tt>_____GATC_</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>_____GCTC_</tt></th></tr>
-  
-  <tr><th><tt>______1111</tt></th><th><tt>______ATCG</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>______CTCG</tt></th></tr>
- 
-  
+  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th><th><tt>_AGGT____</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>__1111____</tt></th><th><tt>__GGAG____</tt></th><th><tt>__GGTG___</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>___1111___</tt></th><th><tt>___GAGA___</tt></th><th><tt>___GTGC___</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>____1111__</tt></th><th><tt>____AGAT__</tt></th><th><tt>____TGCT__</tt></th><th>&#10060;</th></tr> 
+  <tr><th><tt>_____1111_</tt></th><th><tt>_____GATC_</tt></th><th><tt>_____GCTC_</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>______1111</tt></th><th><tt>______ATCG</tt></th><th><tt>______CTCG</tt></th><th>&#10060;</th></tr>
 </table>
 
 
