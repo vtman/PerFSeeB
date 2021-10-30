@@ -56,14 +56,14 @@ However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call th
 <tt>10110001</tt>
 
 <table>
-  <tr><th><tt>101100010000000</tt></th></tr>
-  <tr><th><tt>010110001000000</tt></th></tr>
-  <tr><th><tt>001011000100000</tt></th></tr>
-  <tr><th><tt>000101100010000</tt></th></tr>  
-  <tr><th><tt>000010110001000</tt></th></tr>
-  <tr><th><tt>000001011000100</tt></th></tr>
-  <tr><th><tt>000000101100010</tt></th></tr>
-  <tr><th><tt>000000010110001</tt></th></tr>
+  <tr><th><tt>101<b>1</b>00010000000</tt></th></tr>
+  <tr><th><tt>010<b>1</b>10001000000</tt></th></tr>
+  <tr><th><tt>001<b>0</b>11000100000</tt></th></tr>
+  <tr><th><tt>000<b>1</b>01100010000</tt></th></tr>  
+  <tr><th><tt>000<b>0</b>10110001000</tt></th></tr>
+  <tr><th><tt>000<b>0</b>01011000100</tt></th></tr>
+  <tr><th><tt>000<b>0</b>00101100010</tt></th></tr>
+  <tr><th><tt>000<b>0</b>00010110001</tt></th></tr>
   <tr><th><tt>___X___X_X_____</tt></th></tr>
 </table>
 
