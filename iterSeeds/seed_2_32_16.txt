@@ -1,0 +1,5 @@
+Length of reads: 32
+Number of mismatches: 2
+Minimum weight: 16
+11101001110100111010011101	16
+10111001011100101110010111	16
