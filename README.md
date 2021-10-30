@@ -25,6 +25,8 @@ If there are several mutations, then using contiguous chunks of symbols to ident
 
 For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed.
 
+&#10003;
+
 <table>
   <tr><th>Seq 1</th><th><tt>TTGGAGATCG</tt></th></tr>
   <tr><th>Seq 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
