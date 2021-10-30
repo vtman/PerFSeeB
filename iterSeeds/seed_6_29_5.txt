@@ -1,0 +1,5 @@
+Length of reads: 29
+Number of mismatches: 6
+Minimum weight: 5
+1100000100000011	5
+1100000010000011	5
