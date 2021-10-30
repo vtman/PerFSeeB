@@ -11,5 +11,7 @@ and a read
 
 <tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt>
 
-<tt>_______________TAGGAGCCAT___________________</tt>.
+<tt>_______________TAGGAGCCAT___________________</tt>
+
+And
 
