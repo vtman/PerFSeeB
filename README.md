@@ -40,7 +40,7 @@ Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cann
 </table>
 
 
-However, if we consider a seed <tt>101101</tt> (it also has weight 4), then there is none position when two seqeunces fuly matched.
+However, if we consider a seed <tt>101101</tt> (it also has weight 4), then there is one position when two seqeunces are fully matched.
 
 <table>
   <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
