@@ -28,11 +28,11 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
 <table>
   <tr><th>Seq 1</th><th><tt>TTGGAGATCG</tt></th></tr>
   <tr><th>Seq 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
-  <tr><th><tt>101101____</tt></th></tr>
-  <tr><th><tt>_101101___</tt></th></tr>
-  <tr><th><tt>__101101__</tt></th></tr>
-  <tr><th><tt>___101101_</tt></th></tr>
-  <tr><th><tt>____101101</tt></th></tr>
+  <tr><th><tt>101101____</tt></th><th><tt>TTGGAG____</tt></th></tr>
+  <tr><th><tt>_101101___</tt></th><th><tt>_TGGAGA___</tt></th></tr>
+  <tr><th><tt>__101101__</tt></th><th><tt>__GGAGAT__</tt></th></tr>
+  <tr><th><tt>___101101_</tt></th><th><tt>___GAGATC_</tt></th></tr>
+  <tr><th><tt>____101101</tt></th><th><tt>____AGATCG</tt></th></tr>
 </table>
 
 
