@@ -32,22 +32,22 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
   <tr><th><tt>1111______</tt></th><th><tt>TTGGAGATCG______</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>TAGGTGCTCG______</tt></th></tr>
   
-  <tr><th><tt>1111______</tt></th><th><tt>_TGGAGATCG___</tt></th></tr>
+  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGAGATCG___</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>_AGGTGCTCG______</tt></th></tr>
   
-  <tr><th><tt>1111______</tt></th><th><tt>__GGAGATCG___</tt></th></tr>
+  <tr><th><tt>__1111____</tt></th><th><tt>__GGAGATCG___</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>__GGTGCTCG___</tt></th></tr>
   
-  <tr><th><tt>1111______</tt></th><th><tt>___GAGATCG___</tt></th></tr>
+  <tr><th><tt>___1111___</tt></th><th><tt>___GAGATCG___</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>___GTGCTCG___</tt></th></tr>
   
-  <tr><th><tt>1111______</tt></th><th><tt>____AGATCG__</tt></th></tr>
+  <tr><th><tt>____1111__</tt></th><th><tt>____AGATCG__</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>____TGCTCG__</tt></th></tr>
   
-  <tr><th><tt>1111______</tt></th><th><tt>_____GATCG_</tt></th></tr>
+  <tr><th><tt>_____1111_</tt></th><th><tt>_____GATCG_</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>_____GCTCG_</tt></th></tr>
   
-  <tr><th><tt>1111______</tt></th><th><tt>______ATCG</tt></th></tr>
+  <tr><th><tt>______1111</tt></th><th><tt>______ATCG</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>______CTCG</tt></th></tr>
  
   
