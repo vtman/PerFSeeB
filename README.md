@@ -27,15 +27,16 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
 
 
 <table>
+  <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th><tt></tt></th></tr>
   <tr><th>Seq 1</th><th><tt>TTGGAGATCG</tt></th></tr>
   <tr><th>Seq 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
   <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>TAGG______</tt></th></tr>
   
-  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA____</tt></th></tr>
+  <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>_AGGT____</tt></th></tr>
   
-  <tr><th><tt>__1111____</tt></th><th><tt>__GGAG___</tt></th></tr>
+  <tr><th><tt>__1111____</tt></th><th><tt>__GGAG____</tt></th></tr>
   <tr><th>&#10060;</th><th><tt>__GGTG___</tt></th></tr>
   
   <tr><th><tt>___1111___</tt></th><th><tt>___GAGA___</tt></th></tr>
