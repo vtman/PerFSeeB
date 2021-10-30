@@ -53,4 +53,18 @@ However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call th
 </table>
 
 
+<tt>10110001</tt>
 
+<table>
+  <tr><th><tt>101100010000000</tt></th></tr>
+  <tr><th><tt>010110001000000</tt></th></tr>
+  <tr><th><tt>001011000100000</tt></th></tr>
+  <tr><th><tt>000101100010000</tt></th></tr>  
+  <tr><th><tt>000010110001000</tt></th></tr>
+  <tr><th><tt>000001011000100</tt></th></tr>
+  <tr><th><tt>000000101100010</tt></th></tr>
+  <tr><th><tt>000000010110001</tt></th></tr>
+  <tr><th><tt>___X___X_X_____</tt></th></tr>
+</table>
+
+4       8       10
