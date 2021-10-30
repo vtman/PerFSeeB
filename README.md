@@ -28,7 +28,7 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
 
 <table>
   <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
-  <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th></tr>
+  <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th><th></th></tr>
   <tr><th><tt>1111______</tt></th><th><tt>TTGG______</tt></th><th><tt>TAGG______</tt></th><th>&#10060;</th></tr>
   <tr><th><tt>_1111_____</tt></th><th><tt>_TGGA_____</tt></th><th><tt>_AGGT____</tt></th><th>&#10060;</th></tr>
   <tr><th><tt>__1111____</tt></th><th><tt>__GGAG____</tt></th><th><tt>__GGTG___</tt></th><th>&#10060;</th></tr>
@@ -40,22 +40,13 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
 
 
 <table>
-  <tr><th>Seq 1</th><th><tt>TTGGAGATCG</tt></th></tr>
-  <tr><th>Seq 2</th><th><tt>TAGGTGCTCG</tt></th></tr>
-  <tr><th><tt>101101____</tt></th><th><tt>T_GG_G____</tt></th></tr>
-  <tr><th>&#10004;</th><th><tt>T_GG_G____</tt></th></tr>
-  
-  <tr><th><tt>_101101___</tt></th><th><tt>_T_GA_A___</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>_A_GT_C___</tt></th></tr>
-  
-  <tr><th><tt>__101101__</tt></th><th><tt>__G_AG_T__</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>__G_TG_T__</tt></th></tr>
-  
-  <tr><th><tt>___101101_</tt></th><th><tt>___G_GA_C_</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>___G_GC_C_</tt></th></tr>
-  
-  <tr><th><tt>____101101</tt></th><th><tt>____A_AT_G</tt></th></tr>
-  <tr><th>&#10060;</th><th><tt>____T_CT_G</tt></th></tr>
+  <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
+  <tr><th></th><th><tt>TTGGAGATCG</tt></th><th><tt>TAGGTGCTCG</tt></th><th></th></tr>
+  <tr><th><tt>101101____</tt></th><th><tt>T_GG_G____</tt></th><th><tt>T_GG_G____</tt></th><th>&#10004;</th></tr>  
+  <tr><th><tt>_101101___</tt></th><th><tt>_T_GA_A___</tt></th><th><tt>_A_GT_C___</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>__101101__</tt></th><th><tt>__G_AG_T__</tt></th><th><tt>__G_TG_T__</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>___101101_</tt></th><th><tt>___G_GA_C_</tt></th><th><tt>___G_GC_C_</tt></th><th>&#10060;</th></tr>
+  <tr><th><tt>____101101</tt></th><th><tt>____A_AT_G</tt></th><th><tt>____T_CT_G</tt></th><th>&#10060;</th></tr>
 </table>
 
 
