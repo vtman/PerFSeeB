@@ -25,6 +25,7 @@ If there are several mutations, then using contiguous chunks of symbols to ident
 
 For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed.
 
+Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cannot be used to find candidate position, since there are no all same symbols defiend by a shifted seed.
 
 <table>
   <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
@@ -38,6 +39,8 @@ For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S
   <tr><th><tt>______1111</tt></th><th><tt>______ATCG</tt></th><th><tt>______CTCG</tt></th><th>&#10060;</th></tr>
 </table>
 
+
+However, if we consider a seed <tt>101101</tt> (it also has weight 4), then there is none position when two seqeunces fuly matched.
 
 <table>
   <tr><th>Seed</th><th><tt>Seq 1</tt></th><th><tt>Seq 2</tt></th><th></th></tr>
