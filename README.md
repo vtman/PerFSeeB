@@ -119,5 +119,9 @@ For example, seed <tt>1110100000000111010000000011101</tt> is valid for m=4, r=4
 <table>
 	<tr><th><tt>1110100000000</tt></th><th><tt>1110100000000</tt></th><th><tt>11101</tt></th></tr>
 </table>
+We seed that T=13, n<sub>b</sub>=2, n<sub>d</sub>=5, so n<sub>s</sub>=31 and 43 = 31 + 13 - 1.
 
+We try to find possible blocks such that we are able to form seeds of the given structure.
+
+<h2>Periodic blocks</h2>
 
