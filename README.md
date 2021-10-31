@@ -23,7 +23,7 @@ Reads may have various mutations. Therefore there can be some mismatches (when t
 
 If there are several mutations, then using contiguous chunks of symbols to identify candiate positions may not work. Therefore it is better to consider chunks with some symbols to be ignored when sequences are compared. 
 
-For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed.
+For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed. It is assumed that a seed starts and ends with 1-element.
 
 Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cannot be used to find candidate position, since there are no all same symbols defiend by a shifted seed.
 
@@ -82,3 +82,6 @@ For the output we get the matrix and information about seed's validity. If the s
 
 checkSeed128 is a faster version based on SIMD instructions. checkSeedClassic and checkSeed128 have the same input parameters.
 
+<h2>iterSeed: Spaced seeds generated iteratively</h2>
+
+We have a tool to check if a seed is valid. Of course, for a given length of a seed we may generate all possible spaced seeds. For length 1, there is only one seed <tt>1</tt>, for length 2, there is also one seed <tt>11</tt>, for length 3, there are 2 seeds (<tt>101</tt>, <tt>111</tt>), for length 4, there are 4 seeds (<tt>1001</tt>, <tt>1011</tt>, <tt>1101</tt>, <tt>1111</tt>), etc. So, for length k, there are 2<sup>k-2</sup> seeds of length k, therefore there are 2<sup>k-1</sup> seeds of length not more than k. We need to reduce the number of possible seeds to be validated. 
