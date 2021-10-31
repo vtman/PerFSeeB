@@ -104,3 +104,7 @@ Since there are usually a lot of spaced seeds generated in this way, we try to r
 
 As an output we get the following spaced seeds: <tt>111010011</tt>, <tt>111001011</tt>, <tt>110100111</tt>, <tt>110010111</tt>, <tt>1101001101</tt>, <tt>1011001011</tt>. These seeds have the maximum weight possible (6). Note that if there is a valid seed, then its flipped version should also be in the list, i.e. seeds <tt>110100111</tt>, <tt>110010111</tt> are both in the list. There may also be longer seeds of smaller weight. For example, the maximum length for seeds of weight 6 is 10 (seeds <tt>1101001101</tt> and <tt>1011001011</tt>), however for seeds of weight 5 we get <tt>1001001001001</tt> of length 13.
 
+We have generated spaced seeds for number of mismatches from 2 to 8 and reads' lengths from 10 to 50 (different ranges for different numbers of mismatches). They are in <b>iterSeed</b> folder.
+
+<h2>Seeds of maximum weight</h2>
+For practical applications it is better to use seeds of maximum weight. We have four letters <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. Let us assume that their chance to be in a seqeunce is the same and does not depend on neighbouring symbols (these assumptions are not completly true). So if a chance to find a pattern of length k within a reference sequence is P<sub>k</sub>, then the chance to find a pattern of length (k+1) is P<sub>k</sub>/4. Therefore seeds of higher weight allow us to process 4 times less candidate positions within a reference sequence.
