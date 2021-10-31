@@ -125,3 +125,25 @@ We try to find possible blocks such that we are able to form seeds of the given 
 
 <h2>Periodic blocks</h2>
 
+If the formula above is valid for a periodic seed, then to validate the seed it is enough to validate its periodic block. For example, we have seed <tt>110010111001011100101110010111</tt>. We create 7 rows such that
+
+<table>
+	<tr><th><tt>110010111001011100101110010111000000</tt></th></tr>
+	<tr><th><tt>011001011100101110010111001011100000</tt></th></tr>
+	<tr><th><tt>001100101110010111001011100101110000</tt></th></tr>
+	<tr><th><tt>000110010111001011100101110010111000</tt></th></tr>
+	<tr><th><tt>000011001011100101110010111001011100</tt></th></tr>
+	<tr><th><tt>000001100101110010111001011100101110</tt></th></tr>
+	<tr><th><tt>000000110010111001011100101110010111</tt></th></tr>
+</table>
+
+We split the rows to form
+<table>
+	<tr><th><tt>1100101</tt></th><th><tt>1100101</tt></th><th><tt>1100101</tt></th><th><tt>1100101</tt></th><th><tt>11000000</tt></th></tr>
+	<tr><th><tt>0110010</tt></th><th><tt>1110010</tt></th><th><tt>1110010</tt></th><th><tt>1110010</tt></th><th><tt>11100000</tt></th></tr>
+	<tr><th><tt>0011001</tt></th><th><tt>0111001</tt></th><th><tt>0111001</tt></th><th><tt>0111001</tt></th><th><tt>01110000</tt></th></tr>
+	<tr><th><tt>0001100</tt></th><th><tt>1011100</tt></th><th><tt>1011100</tt></th><th><tt>1011100</tt></th><th><tt>10111000</tt></th></tr>
+	<tr><th><tt>0000110</tt></th><th><tt>0101110</tt></th><th><tt>0101110</tt></th><th><tt>0101110</tt></th><th><tt>01011100</tt></th></tr>
+	<tr><th><tt>0000011</tt></th><th><tt>0010111</tt></th><th><tt>0010111</tt></th><th><tt>0010111</tt></th><th><tt>00101110</tt></th></tr>
+	<tr><th><tt>0000001</tt></th><th><tt>1001011</tt></th><th><tt>1001011</tt></th><th><tt>1001011</tt></th><th><tt>10010111</tt></th></tr>
+</table>
