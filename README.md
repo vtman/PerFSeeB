@@ -147,3 +147,14 @@ We split the rows to form
 	<tr><th><tt>0000011</tt></th><th><tt>0010111</tt></th><th><tt>0010111</tt></th><th><tt>0010111</tt></th><th><tt>00101110</tt></th></tr>
 	<tr><th><tt>0000001</tt></th><th><tt>1001011</tt></th><th><tt>1001011</tt></th><th><tt>1001011</tt></th><th><tt>10010111</tt></th></tr>
 </table>
+
+To validate the seed we need to choose any m arbitrary columns. For those columns there should be a row where all these columns have 0-elements. Therefore if choose columns within the second "big" column (of 7 standard columns), then the validation procedure should be true for it. All other columns outside this "big"  column either have identical columns within the "big" one or have more 0-elements than corresponding columns within the "big" one. Therefore we only need to check the "big" column, which is made by cyclic shift operation.
+<table>
+	<tr><th><tt>1100101</tt></th></tr>
+	<tr><th><tt>1110010</tt></th></tr>
+	<tr><th><tt>0111001</tt></th></tr>
+	<tr><th><tt>1011100</tt></th></tr>
+	<tr><th><tt>0101110</tt></th></tr>
+	<tr><th><tt>0010111</tt></th></tr>
+	<tr><th><tt>1001011</tt></th></tr>
+</table>
