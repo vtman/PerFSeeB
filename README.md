@@ -88,3 +88,19 @@ We have a tool to check if a seed is valid. Of course, for a given length of a s
 
 If there is a valid seed, then all its subseeds are also valid. For example, seed <tt>111001011</tt> is valid for r=15, m=2. Subseeds like <tt>111</tt>, <tt>1011</tt>, <tt>111001</tt>, <tt>1001001</tt> are also valid. Therefore for a step k we may consider all valid spaced seeds of length less than k and pad them with all 0-elements and one end 1-element from the right. So, to find seed <tt>1101001101</tt> (it is also a valid seed for the abovbe parameters) we use seed <tt>11010011</tt> pad it with one <tt>0</tt> and one <tt>1</tt>. We may also perform an additional check: by removing the leftest 1-element of the new seed (and all neighbouring 0-elements) we should get a valid seed. Therefore we need to check if 
 <tt>101001101</tt> is in the list of valid seeds generated before. There is no need to check other subseeds of <tt>1101001101</tt>, since either <tt>11010011</tt> or <tt>101001101</tt> contain them.
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Output folder</li>
+  <li>Number of mismatches</li>
+  <li>Length of reads</li>
+	<li>Minimum weight</li>
+</ol>
+
+Since there are usually a lot of spaced seeds generated in this way, we try to report only seeds of large weights. Therefore we specify the minimum weight required for a seed to be reported.
+
+<tt>iterSeed.exe C:\MyFolder 15 2 6</tt>
+
+As an output we get the following spaced seeds: <tt>111010011</tt>, <tt>111001011</tt>, <tt>110100111</tt>, <tt>110010111</tt>, <tt>1101001101</tt>, <tt>1011001011</tt>. These seeds have the maximum weight possible (6). Note that if there is a valid seed, then its flipped version should also be in the list, i.e. seeds <tt>110100111</tt>, <tt>110010111</tt> are both in the list. There may also be longer seeds of smaller weight. For example, the maximum length for seeds of weight 6 is 10, however for seeds of weight 5 we get <tt>1001001001001</tt> of length 13.
+
