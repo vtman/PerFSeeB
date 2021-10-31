@@ -102,5 +102,5 @@ Since there are usually a lot of spaced seeds generated in this way, we try to r
 
 <tt>iterSeed.exe C:\MyFolder 15 2 6</tt>
 
-As an output we get the following spaced seeds: <tt>111010011</tt>, <tt>111001011</tt>, <tt>110100111</tt>, <tt>110010111</tt>, <tt>1101001101</tt>, <tt>1011001011</tt>. These seeds have the maximum weight possible (6). Note that if there is a valid seed, then its flipped version should also be in the list, i.e. seeds <tt>110100111</tt>, <tt>110010111</tt> are both in the list. There may also be longer seeds of smaller weight. For example, the maximum length for seeds of weight 6 is 10, however for seeds of weight 5 we get <tt>1001001001001</tt> of length 13.
+As an output we get the following spaced seeds: <tt>111010011</tt>, <tt>111001011</tt>, <tt>110100111</tt>, <tt>110010111</tt>, <tt>1101001101</tt>, <tt>1011001011</tt>. These seeds have the maximum weight possible (6). Note that if there is a valid seed, then its flipped version should also be in the list, i.e. seeds <tt>110100111</tt>, <tt>110010111</tt> are both in the list. There may also be longer seeds of smaller weight. For example, the maximum length for seeds of weight 6 is 10 (seeds <tt>1101001101</tt> and <tt>1011001011</tt>), however for seeds of weight 5 we get <tt>1001001001001</tt> of length 13.
 
