@@ -80,5 +80,5 @@ For the output we get the matrix and information about seed's validity. If the s
 </table>
 
 
-checkSeed128 is a faster version based on SIMD instructions.
+checkSeed128 is a faster version based on SIMD instructions. checkSeedClassic and checkSeed128 have the same input parameters.
 
