@@ -123,7 +123,7 @@ We seed that T=13, n<sub>b</sub>=2, n<sub>d</sub>=5, so n<sub>s</sub>=31 and 43 
 
 We try to find possible blocks such that we are able to form seeds of the given structure.
 
-<h2>Periodic blocks</h2>
+<h2>periodicBlock: Periodic blocks</h2>
 
 If the formula above is valid for a periodic seed, then to validate the seed it is enough to validate its periodic block. For example, we have seed <tt>110010111001011100101110010111</tt>. We create 7 rows such that
 
@@ -158,3 +158,30 @@ To validate the seed we need to choose any m arbitrary columns. For those column
 	<tr><th><tt>0010111</tt></th></tr>
 	<tr><th><tt>1001011</tt></th></tr>
 </table>
+
+<h3>Parameters</h3>
+
+<ol>
+  <li>Output folder</li>
+  <li>Number of mismatches</li>
+  <li>Length of a block</li>
+  <li>Initial number of 0-elements</li>
+  <li>Size of chunks for parallelisation</li>
+  <li>Number of threads</li>
+  <li>(optional) omit first N candidates (default = -1)</li>
+  <li>(optional) Initial string </li>
+</ol>
+
+<tt>periodicBlock.exe D:\PerFSeeB\outTest 3 30 2 100000 6</tt>
+
+Our goal is to find blocks of maximum weight (maximum number of 1-elements). Therefore we start we a small number of 0-elements and try to find any valid blocks. If there are no such blocks, then we increse the number of 0-elements in a block by one and repeat the procedure. For short blocks (< 35) the procedure is fast, so the number can be any small (and must be positive). However, for big blocks it may be reasonable to start with some number, e.g. using numbers found for shorter blocks. However, one needs to take into account that while the number of 0-elements tends to increase with the block size, some blocks may have less zeros than shorter blocks.
+
+The code pre-generate a list of candidate blocks, then all those candidates are processed (validated) in parallel. Therefore a user must specify the number of candidates to be pre-generated and number of threads to be used. The number of candidates is good to set to 1000000, the number of threads is usually the number of cores in a CPU (in any case the code will check the number of threads available).
+
+Processing for large blocks may take hours/days
+
+
+Since there are usually a lot of spaced seeds generated in this way, we try to report only seeds of large weights. Therefore we specify the minimum weight required for a seed to be reported.
+
+
+
