@@ -16,7 +16,7 @@ Software tools to find optimal spaced seeds.
   </nav>
 
 <h2 id="link_intro">Introduction</h2>
-We consider sequences of symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. Suppose there is a long reference sequence (for a human genome it may have length of 3.2 billion symbols). There is also a set of short sequences (called <i>reads</i>), their size is around 50-300 symbols. We know that the reads are chunks of another long sequence which is in some way is close to the reference sequence. Our goal is to align those reads with respect to the reference sequence. 
+We consider sequences of symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. Suppose there is a long reference sequence (for a human genome it may have a length of 3.2 billion symbols). There is also a set of short sequences (called <i>reads</i>), their size is around 50-300 symbols. We know that the reads are chunks of another long sequence which is in some way is close to the reference sequence. Our goal is to align those reads with respect to the reference sequence. 
 
 Suppose, we have a reference sequence
 <tt>ACGACAACCTTGTCGTTGGAGATCGGAAGAGCACACGTCTGAAC</tt>
@@ -29,17 +29,17 @@ and a read
   <tr><th><tt>_______________1011010111___________________</tt></th></tr>
 </table>
 
-We use Hamming distance to measure similarity of these two seqeunces. If two symbols at the same position are identical, then the distance is 0, otherwise the distance is 1. The total distance is the sum of elementwise distances. Ideally, we would like to position the second seqeunce in such a way, so the distance attains its minimum value (or is within some ranges of values). 
+We use Hamming distance to measure the similarity of these two sequences. If two symbols at the same position are identical, then the distance is 0, otherwise, the distance is 1. The total distance is the sum of elementwise distances. Ideally, we would like to position the second sequence in such a way, so the distance attains its minimum value (or is within some ranges of values). 
 
-The standard approach in case of a long seqeunce is to consider its smaller chunks and find their poistions within the reference sequence. After a read is pre-aligned, we calculate the final similarity score based on Hamming or other distances. The goal of this project is to pre-align reads (find candidate positions within the reference sequence).
+The standard approach in the case of a long sequence is to consider its smaller chunks and find their positions within the reference sequence. After a read is pre-aligned, we calculate the final similarity score based on Hamming or other distances. The goal of this project is to pre-align reads (find candidate positions within the reference sequence).
 
-Reads may have various mutations. Therefore there can be some mismatches (when the reference seqeunce and a read have different symbols at same positions), insertions or deletions of symbols. Here we consider only mismatches. 
+Reads may have various mutations. Therefore there can be some mismatches (when the reference sequence and a read have different symbols at the same positions), insertions or deletions of symbols. Here we consider only mismatches. 
 
-If there are several mutations, then using contiguous chunks of symbols to identify candiate positions may not work. Therefore it is better to consider chunks with some symbols to be ignored when sequences are compared. 
+If there are several mutations, then using contiguous chunks of symbols to identify candidate positions may not work. Therefore it is better to consider chunks with some symbols to be ignored when sequences are compared. 
 
-For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed. It is assumed that a seed starts and ends with 1-element.
+For this purpose we used a <i>seed</i>, a sequence of 1 and 0, of length n<sub>S</sub> (the total number of all symbols). By seed's <i>weight</i> we call the total number of 1s in the seed. It is assumed that the seed starts and ends with 1-element.
 
-Let us conider a seed <tt>1111</tt> of weight 4. We may seed that this seed cannot be used to find candidate position, since there are no all same symbols defiend by a shifted seed.
+Let us consider a seed <tt>1111</tt> of weight 4. We may see that this seed cannot be used to find a candidate position, since there are no all same symbols defined by a shifted seed.
 
 <table>
   <tr><th>Seed</th><th>Seq 1</th><th>Seq 2</th><th></th></tr>
@@ -80,7 +80,7 @@ Suppose we are given a seed of length <tt>L</tt>. We also know the maximum numbe
 
 <tt>checkSeed128.exe 15 3 10110001</tt>
 
-For the output we get the matrix and information about seed's validity. If the seed is not valid we also get a list of columns when the requirements are not met. For example, we get columns 4, 8, 10 and the matrix (extra separator | is added for convinience).
+For the output, we get the matrix and information about the seed's validity. If the seed is not valid we also get a list of columns when the requirements are not met. For example, we get columns 4, 8, 10 and the matrix (extra separator | is added for convenience).
 
 <table>
   <tr><th><tt>101|1000|10|000000</tt></th></tr>
@@ -119,15 +119,15 @@ Since there are usually a lot of spaced seeds generated in this way, we try to r
 
 As an output we get the following spaced seeds: <tt>111010011</tt>, <tt>111001011</tt>, <tt>110100111</tt>, <tt>110010111</tt>, <tt>1101001101</tt>, <tt>1011001011</tt>. These seeds have the maximum weight possible (6). Note that if there is a valid seed, then its flipped version should also be in the list, i.e. seeds <tt>110100111</tt>, <tt>110010111</tt> are both in the list. There may also be longer seeds of smaller weight. For example, the maximum length for seeds of weight 6 is 10 (seeds <tt>1101001101</tt> and <tt>1011001011</tt>), however for seeds of weight 5 we get <tt>1001001001001</tt> of length 13.
 
-We have generated spaced seeds for number of mismatches from 2 to 8 and reads' lengths from 10 to 50 (different ranges for different numbers of mismatches). They are in <b>iterSeed</b> folder.
+We have generated spaced seeds for a number of mismatches from 2 to 8 and reads' lengths from 10 to 50 (different ranges for different numbers of mismatches). They are in <b>iterSeed</b> folder.
 
 <h2 id="link_maxWeight">Seeds of maximum weight</h2>
 
-For practical applications it is better to use seeds of maximum weight. We have four letters <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. Let us assume that their chance to be in a seqeunce is the same and does not depend on neighbouring symbols (these assumptions are not completly true). So, if a chance to find a pattern of length k within a reference sequence is P<sub>k</sub>, then the chance to find a pattern of length (k+1) is P<sub>k</sub>/4. Therefore seeds of higher weight allow us to process 4 times less candidate positions within a reference sequence.
+For practical applications, it is better to use seeds of maximum weight. We have four letters <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt>. Let us assume that their chance to be in a sequence is the same and does not depend on neighbouring symbols (these assumptions are not completely true). So, if a chance to find a pattern of length k within a reference sequence is P<sub>k</sub>, then the chance to find a pattern of length (k+1) is P<sub>k</sub>/4. Therefore seeds of higher weight allow us to process 4 times fewer candidate positions within a reference sequence.
 
 For a given length of reads and a number of mismatches, there may be several seeds of maximum weight. For example, for r=45, m=8 and w=6 we get several valid seeds including <tt>1111011</tt>, <tt>1011110001</tt>, <tt>11011000101</tt>, <tt>1001001000001000000001001</tt>, <tt>1100000001000000001100000001</tt>. This means that if we choose one of the shortest seeds (<tt>1111011</tt>) of length 7, then we need to consider 45-7+1=39 chunks of a read (of length 45) and use them to find corresponding candidate positions within a reference seqeunce. However, if we use seed <tt>1100000001000000001100000001</tt> of length 28, the number of chunks becomes 45-28+1=18 (almost 2 times less). So, using longest seeds among seeds of maximum weight can reduce processing times.
 
-Of course, there may several lengths of reads when w is the maximum weight. If a seed is valid for a read of length r, then it is also valid for a read of length (r+1). Therefore, while there may be several seeds valid for various lengths of reads, we pick up only those valid for shortest lengths. For around 80% of seeds obtained using the iterative procedure we may see that the best seeds (longest seeds of maximum weight valid for shortest reads) have a periodic structure: an integer number n<sub>b</sub> of blocks of length <i>T</i> and a "remainder" (first n<sub>d</sub> elements of the block), so the total length is n<sub>s</sub> = n<sub>b</sub> T + n<sub>d</sub>, and the following formula is valid
+Of course, there may several lengths of reads when w is the maximum weight. If a seed is valid for a read of length r, then it is also valid for a read of length (r+1). Therefore, while there may be several seeds valid for various lengths of reads, we pick up only those valid for the shortest lengths. For around 80% of seeds obtained using the iterative procedure we may see that the best seeds (longest seeds of maximum weight valid for shortest reads) have a periodic structure: an integer number n<sub>b</sub> of blocks of length <i>T</i> and a "remainder" (first n<sub>d</sub> elements of the block), so the total length is n<sub>s</sub> = n<sub>b</sub> T + n<sub>d</sub>, and the following formula is valid
 
 r = n<sub>s</sub> + T - 1
 
@@ -164,7 +164,7 @@ We split the rows to form
 	<tr><th><tt>0000001</tt></th><th><tt>1001011</tt></th><th><tt>1001011</tt></th><th><tt>1001011</tt></th><th><tt>10010111</tt></th></tr>
 </table>
 
-To validate the seed we need to choose any m arbitrary columns. For those columns there should be a row where all these columns have 0-elements. Therefore if choose columns within the second "big" column (of 7 standard columns), then the validation procedure should be true for it. All other columns outside this "big"  column either have identical columns within the "big" one or have more 0-elements than corresponding columns within the "big" one. Therefore we only need to check the "big" column, which is made by cyclic shift operation.
+To validate the seed we need to choose any m arbitrary columns. For those columns, there should be a row where all these columns have 0-elements. Therefore if choose columns within the second "big" column (of 7 standard columns), then the validation procedure should be true for it. All other columns outside this "big"  column either have identical columns within the "big" one or have more 0-elements than corresponding columns within the "big" one. Therefore we only need to check the "big" column, which is made by the cyclic shift operation.
 <table>
 	<tr><th><tt>1100101</tt></th></tr>
 	<tr><th><tt>1110010</tt></th></tr>
@@ -190,13 +190,13 @@ To validate the seed we need to choose any m arbitrary columns. For those column
 
 <tt>periodicBlock.exe D:\PerFSeeB\outTest 3 30 2 100000 6</tt>
 
-Our goal is to find blocks of maximum weight (maximum number of 1-elements). Therefore we start we a small number of 0-elements and try to find any valid blocks. If there are no such blocks, then we increse the number of 0-elements in a block by one and repeat the procedure. For short blocks (< 35) the procedure is fast, so the number can be any small (and must be positive). However, for big blocks it may be reasonable to start with some number, e.g. using numbers found for shorter blocks. However, one needs to take into account that while the number of 0-elements tends to increase with the block size, some blocks may have less zeros than shorter blocks.
+Our goal is to find blocks of maximum weight (maximum number of 1-elements). Therefore we start we a small number of 0-elements and try to find any valid blocks. If there are no such blocks, then we increase the number of 0-elements in a block by one and repeat the procedure. For short blocks (< 35) the procedure is fast, so the number can be any small (and must be positive). However, for big blocks, it may be reasonable to start with some number, e.g. using numbers found for shorter blocks. However, one needs to take into account that while the number of 0-elements tends to increase with the block size, some blocks may have fewer zeros than shorter blocks.
 
-The code pre-generate a list of candidate blocks, then all those candidates are processed (validated) in parallel. Therefore a user must specify the number of candidates to be pre-generated and number of threads to be used. The number of candidates is good to set to 1000000, the number of threads is usually the number of cores in a CPU (in any case the code will check the number of threads available).
+The code pre-generates a list of candidate blocks, then all those candidates are processed (validated) in parallel. Therefore a user must specify the number of candidates to be pre-generated and the number of threads to be used. The number of candidates is good to set to 1000000, the number of threads is usually the number of cores in a CPU (in any case the code will check the number of threads available).
 
-Processing for large blocks may take hours/days, so in some cases when the code is stopped one may use the last found block as the initial block. Or one may specify the number of candidate blocks to be skipped (generation of candidate blocks is relatively fast compared to the time required for validation). However, these two parameters are optional and may not be used in normal situation.
+Processing for large blocks may take hours/days, so in some cases when the code is stopped one may use the last found block as the initial block. Or one may specify the number of candidate blocks to be skipped (generation of candidate blocks is relatively fast compared to the time required for validation). However, these two parameters are optional and may not be used in a normal situation.
 
-We aim for blocks of maximum weight, therefore once at least one block of a given weight is found, we do not geenrate blocks of smaller weights. In principle, if a user needs other blocks, then it is possible to modify a code to specify the exit procedure or use another number of 0-elements. Note that the number of blocks can be large in case of non-maximum weights.
+We aim for blocks of maximum weight, therefore once at least one block of a given weight is found, we do not generate blocks of smaller weights. In principle, if a user needs other blocks, then it is possible to modify a code to specify the exit procedure or use another number of 0-elements. Note that the number of blocks can be large in the case of non-maximum weights.
 
 Blocks generated by the above code are saved in <b>perBlock</b> folder.
 
@@ -218,11 +218,11 @@ Blocks found above can be used to generate spaced seeds of high weight. For a gi
 
 <tt>bestPerSeed.exe D:\PerFSeeB\perBlocks D:\PerFSeeB\outTest\bestS 5 6 50 20 200</tt>
 
-Input files are those generated by <i>periodicBlock</i>. The code uses the same template of file names. File indices are the minimum/maximum lengths of blocks to be used. Ouput files are generated for given lengths of reads. Each output file contains the maximum weight, size of a periodic block T, number of these periodic blocks n<sub>b</sub>, "remainder" n<sub>d</sub>, the periodic block and the final seed. There are usually several seeds in each file. For short reads there may be no files generated (empty files).
+Input files are those generated by <i>periodicBlock</i>. The code uses the same template of file names. File indices are the minimum/maximum lengths of blocks to be used. Output files are generated for given lengths of reads. Each output file contains the maximum weight, size of a periodic block T, the number of these periodic blocks n<sub>b</sub>, "remainder" n<sub>d</sub>, the periodic block and the final seed. There are usually several seeds in each file. For short reads, there may be no files generated (empty files).
 
-There is also <b>res_#.txt</b> in the output folder containing information about read's length, seed weight, number of sizes for periodic blocks that give us the highest weight and (after | separator) the list of those sizes. Note that the code generates seeds based on the main formula. Therefore in some cases seeds of higher weight may be found for shorter reads. Thus it is important to check <b>res_#.txt</b> files to identify those lengths.
+There is also <b>res_#.txt</b> in the output folder containing information about read's length, seed weight, number of sizes for periodic blocks that give us the highest weight and (after | separator) the list of those sizes. Note that the code generates seeds based on the main formula. Therefore in some cases, seeds of higher weight may be found for shorter reads. Thus it is important to check <b>res_#.txt</b> files to identify those lengths.
 
 <h2  id="link_bestLaTeX">bestSeedsLaTeX</h2>
-For a given number of mismatches and seed's weight we find the minimum length of reads that can be used and report those best seeds. The code has the same paraemters and generate an itemised list for a LaTeX file. By default, we restrict the weights (between 16 and 320), it can be changed in the code (countLoc variable).
+For a given number of mismatches and seed's weight, we find the minimum length of reads that can be used and report those best seeds. The code has the same parameters and generates an itemised list for a LaTeX file. By default, we restrict the weights (between 16 and 320), it can be changed in the code (countLoc variable).
 
 PDF files for the latest seeds are in <b>bestSeeds</b> folder.
