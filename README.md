@@ -6,8 +6,10 @@ Software tools to find optimal spaced seeds.
 <nav>
   <ul>
     <li><a href="#link_intro">Introduction</a></li>
-    <li><a href="#link_iterSeed">iterSeed: Spaced seeds generated iteratively</a></li>
+    <li><a href="#link_check">checkSeedClassic/checkSeed128: Check if a seed is valid</a></li>
+    <li><a href="#link_iterSeed">iterSeed: Spaced seeds generated iteratively</a></li>	  
     <li><a href="#link_maxWeight">Seeds of maximum weight</a></li>
+    <li><a href="#link_periodicBlock">periodicBlock: Periodic blocks</a></li>
     <li><a href="#link_bestPerSeed">bestPerSeed: Finding best periodic seeds</a></li>
     <li><a href="#link_bestLaTeX">bestSeedsLaTeX</a></li>
   </ul>
@@ -64,7 +66,8 @@ However, if we consider a seed <tt>101101</tt> (it also has weight 4, we call th
   <tr><th><tt>____101101</tt></th><th><tt>____A_AT_G</tt></th><th><tt>____T_CT_G</tt></th><th>&#10060;</th></tr>
 </table>
 
-<h2>checkSeedClassic/checkSeed128: Check if a seed is valid</h2>
+<h2 id="link_check">checkSeedClassic/checkSeed128: Check if a seed is valid</h2>
+
 Suppose we are given a seed of length <tt>L</tt>. We also know the maximum number <tt>m</tt> of mismatches and read's length <tt>r</tt>. We create <tt>T = r-L+1</tt> rows and pad the seed with 0s (just adding extra zero to the left for each new row and removing one zero from the right). A seed is valid if for any arbitrary <tt>m</tt> columns of the matrix there is at least one row such that all corresponding elements are zeros.
 
 <h3>Parameters</h3>
@@ -136,7 +139,7 @@ We seed that T=13, n<sub>b</sub>=2, n<sub>d</sub>=5, so n<sub>s</sub>=31 and 43 
 
 We try to find possible blocks such that we are able to form seeds of the given structure.
 
-<h2>periodicBlock: Periodic blocks</h2>
+<h2 id="link_periodicBlock">periodicBlock: Periodic blocks</h2>
 
 If the formula above is valid for a periodic seed, then to validate the seed it is enough to validate its periodic block. For example, we have seed <tt>110010111001011100101110010111</tt>. We create 7 rows such that
 
