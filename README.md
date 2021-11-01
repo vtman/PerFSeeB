@@ -178,10 +178,6 @@ Our goal is to find blocks of maximum weight (maximum number of 1-elements). The
 
 The code pre-generate a list of candidate blocks, then all those candidates are processed (validated) in parallel. Therefore a user must specify the number of candidates to be pre-generated and number of threads to be used. The number of candidates is good to set to 1000000, the number of threads is usually the number of cores in a CPU (in any case the code will check the number of threads available).
 
-Processing for large blocks may take hours/days
-
-
-Since there are usually a lot of spaced seeds generated in this way, we try to report only seeds of large weights. Therefore we specify the minimum weight required for a seed to be reported.
-
+Processing for large blocks may take hours/days, so in some cases when the code is stopped one may use the last found block as the initial block. Or one may specify the number of candidate blocks to be skipped (generation of candidate blocks is relatively fast compared to the time required for validation). However, these two parameters are optional and may not be used in normal situation.
 
 
