@@ -137,11 +137,11 @@ For example, seed <tt>1110100000000111010000000011101</tt> is valid for m=4, r=4
 </table>
 We seed that T=13, n<sub>b</sub>=2, n<sub>d</sub>=5, so n<sub>s</sub>=31 and 43 = 31 + 13 - 1.
 
-We try to find possible blocks such that we are able to form seeds of the given structure.
+We try to find possible blocks such that we can form seeds of the given structure.
 
 <h2 id="link_periodicBlock">periodicBlock: Periodic blocks</h2>
 
-If the formula above is valid for a periodic seed, then to validate the seed it is enough to validate its periodic block. For example, we have seed <tt>110010111001011100101110010111</tt>. We create 7 rows such that
+If the formula above is valid for a periodic seed, then to validate the seed is enough to validate its periodic block. For example, we have seed <tt>110010111001011100101110010111</tt>. We create 7 rows such that
 
 <table>
 	<tr><th><tt>110010111001011100101110010111000000</tt></th></tr>
