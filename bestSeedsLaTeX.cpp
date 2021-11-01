@@ -265,7 +265,7 @@ int main(int argc, char* argv[]) {
 					if (countLoc < bestOne[iL])continue;
 
 					qL = nWhole * nLen + nRem + 1;
-					if (iL == smallestRead[countLoc] && qL == longestSeed[countLoc] && countLoc >= 16 && countLoc<= 160) {
+					if (iL == smallestRead[countLoc] && qL == longestSeed[countLoc] && countLoc >= 16 && countLoc<= 320) {
 						sprintf(mLine1, "\\item $n_m=%i$, $w=%i$, $L_{min}=%i$, $n_b=%i$, $n_d=%i$,\\newline\n$b={}$\\texttt{", 
 							nMismatches, countLoc, iL, nWhole, nRem + 1);
 						for (int ii = 0; ii < nLen; ii++) {
