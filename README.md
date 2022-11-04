@@ -230,3 +230,21 @@ PDF files for the latest seeds are in <b>bestSeeds</b> folder.
 
 
 <h2 id="link_tools">Tools</h2>
+
+A code requires Intel's performance primitives to be used for sorting. It can be downloaded from <a>https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html</a>
+
+Human reference genome can be dowloaded from <a>https://www.ncbi.nlm.nih.gov/assembly/GCA_009914755.4</a>
+
+<h3>fna2bin</h3>
+Convert the original FNA file into a binary file with index file (to store position of chunks)
+
+<tt>fna2bin.exe C:\Temp2\Genome\T2T\GCF_009914755.1_T2T-CHM13v2.0_genomic.fna C:\Temp2\Genome\T2T\T2T_</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+  <li>Input FNA file</li>
+  <li>Output folder + prefix</li>
+</ol>
+
+For the above example folder <tt>C:\Temp2\Genome\T2T</tt> should exist. Two files will be created in the folder: <tt>T2T_data.bin</tt> and <tt>T2T_info.bin</tt>.
