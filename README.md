@@ -247,4 +247,23 @@ Convert the original FNA file into a binary file with index file (to store posit
   <li>Output folder + prefix</li>
 </ol>
 
-For the above example folder <tt>C:\Temp2\Genome\T2T</tt> should exist. Two files will be created in the folder: <tt>T2T_data.bin</tt> and <tt>T2T_info.bin</tt>.
+For the above example folder <tt>C:\Temp2\Genome\T2T</tt> should exist. Two files will be created in the folder: <tt>T2T_data.bin</tt> and <tt>T2T_info.bin</tt>
+
+
+<h3>fastq2bin</h3>
+Convert a FASTQ file a binary file.
+
+<tt>fastq2bin.exe D:\data\ERR263486_1.fastq C:\out\readsData.bin 100 10000000</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+  <li>Input FASTQ file</li>
+  <li>Output binary file</li>
+  <li>Length of reads</li>
+  <li>Maximum number of reads</li>
+</ol>
+
+Only reads of a given length will be processed. A read is ignored if it containes any symbol except <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt> (case insensitive). If a read is processed, then both read and its counterpart (flipped and <tt>A/T</tt>, <tt>C/G</tt> swapped) are written to the output file. Each symbol is coded by two bits (<tt>A = 0</tt>, <tt>C = 1</tt>, <tt>G = 2</tt>, <tt>T = 3</tt>). The number of bits for each read is rounded up to a byte. So if a read has 43 symbols, then we get 11 bytes in the output file.
+
+
