@@ -251,6 +251,18 @@ For the above example folder <tt>C:\Temp2\Genome\T2T</tt> should exist. Two file
 
 File <tt>info</tt> contains the number of symbols in each chunk. The number of chunks can be found by dividing the file size by 4. It is assumed that FNA chunks contain no other symbols except <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>. Each symbols is coded by by two bits (<tt>A = 0</tt>, <tt>C = 1</tt>, <tt>G = 2</tt>, <tt>T = 3</tt>). Each chunk is rounded up to the nearest 32 symbols. So a chunk of 700 symbols will be rounded to <tt>22 x 32 = 704</tt> symbols and saved as <tt>22 x 8 = 176</tt> bytes in the binary file.
 
+<h3>ref2m128</h3>
+Convert the binary reference file (output of <b>fna2bin</b>) into a binary file supporting <tt>__m128i</tt> numbers.
+
+<tt>ref2m128.exe C:\Temp2\Genome\T2T\T2T_</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+  <li>Input/Output folder + prefix</li>
+</ol>
+
+Files <tt>T2T_data.bin</tt> and <tt>T2T_info.bin</tt> are in the folder <tt>C:\Temp2\Genome\T2T</tt>. File <tt>T2T_m128.bin</tt> is also created in the same folder (its size is twice big than <tt>T2T_data.bin</tt>).
 
 <h3>fastq2bin</h3>
 Convert a FASTQ file a binary file.
@@ -268,6 +280,18 @@ Convert a FASTQ file a binary file.
 
 Only reads of a given length will be processed. A read is ignored if it containes any symbol except <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt> (case insensitive). If a read is processed, then both read and its counterpart (flipped and <tt>A/T</tt>, <tt>C/G</tt> swapped) are written to the output file. Each symbol is coded by two bits (<tt>A = 0</tt>, <tt>C = 1</tt>, <tt>G = 2</tt>, <tt>T = 3</tt>). The number of bits for each read is rounded up to a byte. So if a read has 43 symbols, then we get 11 bytes in the output file.
 
+
+<h3>bin2m128</h3>
+Convert a binary FASTQ file (output of <b>fastq2bin</b>) to binary file supporting <tt>__m128i</tt> numbers. The output files will be used to perform alignment of reads.
+
+<tt>bin2m128.exe C:\out\readsData.bin C:\out\readsData_m128.bin</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+  <li>Input binary file for reads</li>
+  <li>Output binary file</li>
+</ol>
 
 <h3>createList</h3>
 Create a hash table for a given seed.
