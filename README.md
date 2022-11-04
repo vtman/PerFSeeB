@@ -12,6 +12,7 @@ Software tools to find optimal spaced seeds.
     <li><a href="#link_periodicBlock">periodicBlock: Periodic blocks</a></li>
     <li><a href="#link_bestPerSeed">bestPerSeed: Finding best periodic seeds</a></li>
     <li><a href="#link_bestLaTeX">bestSeedsLaTeX</a></li>
+    <li><a href="#link_tools">Tools</a></li>
   </ul>
   </nav>
 
@@ -226,3 +227,6 @@ There is also <b>res_#.txt</b> in the output folder containing information about
 For a given number of mismatches and seed's weight, we find the minimum length of reads that can be used and report those best seeds. The code has the same parameters and generates an itemised list for a LaTeX file. By default, we restrict the weights (between 16 and 320), it can be changed in the code (countLoc variable).
 
 PDF files for the latest seeds are in <b>bestSeeds</b> folder.
+
+
+<h2 id="link_tools">Tools</h2>
