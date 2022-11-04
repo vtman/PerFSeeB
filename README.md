@@ -343,3 +343,19 @@ The hash table created by <b>createList</b> is sorted by "values". The sorting a
 </ol>
 
 
+
+<h3>countMatch</h3>
+For a list of candidate positions we find the maximum number of matches as well as a list of positions where the maximum is attained.
+
+<tt>countMatch.exe C:\Temp2\Genome\T2T\T2T_ D:\Gen2022\out\err263486_pos.bin D:\Gen2022\data\err263486_m128.bin D:\Gen2022\out\err263486_match.bin</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>Reference folder + prefix</li>
+<li>Input binary file (positions)</li>
+<li>Input read file (m128)</li>
+<li>Output binary file (matches)</li>
+</ol>
+
+
