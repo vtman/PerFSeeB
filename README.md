@@ -249,6 +249,8 @@ Convert the original FNA file into a binary file with index file (to store posit
 
 For the above example folder <tt>C:\Temp2\Genome\T2T</tt> should exist. Two files will be created in the folder: <tt>T2T_data.bin</tt> and <tt>T2T_info.bin</tt>
 
+File <tt>info</tt> contains the number of symbols in each chunk. The number of chunks can be found by dividing the file size by 4. It is assumed that FNA chunks contain no other symbols except <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>. Each symbols is coded by by two bits (<tt>A = 0</tt>, <tt>C = 1</tt>, <tt>G = 2</tt>, <tt>T = 3</tt>). Each chunk is rounded up to the nearest 32 symbols. So a chunk of 1000 symbols will be saved as <tt>32x4 = 128</tt> bytes in the binary file.
+
 
 <h3>fastq2bin</h3>
 Convert a FASTQ file a binary file.
