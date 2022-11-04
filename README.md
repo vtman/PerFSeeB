@@ -269,3 +269,34 @@ Convert a FASTQ file a binary file.
 Only reads of a given length will be processed. A read is ignored if it containes any symbol except <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt> (case insensitive). If a read is processed, then both read and its counterpart (flipped and <tt>A/T</tt>, <tt>C/G</tt> swapped) are written to the output file. Each symbol is coded by two bits (<tt>A = 0</tt>, <tt>C = 1</tt>, <tt>G = 2</tt>, <tt>T = 3</tt>). The number of bits for each read is rounded up to a byte. So if a read has 43 symbols, then we get 11 bytes in the output file.
 
 
+<h3>createList</h3>
+Create a hash table for a given seed.
+
+<tt>createList.exe C:\Genome\T2T\T2T_ D:\Temp\seed 1111111111000111011001001001110100111</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+  <li>Folder (+ prefix) for binary reference file</li>
+  <li>Output folder</li>
+  <li>Seed</li>
+</ol>
+
+A set of binary files is created (at most 65536 files) where parts of the hash table are stored. All files have <b>_orig.bin</b> suffix.
+
+
+<h3>sortList</h3>
+The hash table created by <b>createList</b> is sorted by "values". The sorting algorithm use Intel's Integrated Performance Primitives, so Intel software toolkit should be used to compile the code.
+
+<tt>sortList.exe D:\Temp\seed 1111111111000111011001001001110100111</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+  <li>Input/output folder</li>
+  <li>Seed</li>
+</ol>
+
+Hash pairs in the files are sorted by "values". For each original file with <b>_orig.bin</b> suffix a new file is created with <b>_sort.bin</b> suffix.
+
+
