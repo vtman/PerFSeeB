@@ -323,4 +323,23 @@ The hash table created by <b>createList</b> is sorted by "values". The sorting a
 
 Hash pairs in the files are sorted by "values". For each original file with <b>_orig.bin</b> suffix a new file is created with <b>_sort.bin</b> suffix.
 
+<h3>searchPositions</h3>
+The hash table created by <b>createList</b> is sorted by "values". The sorting algorithm use Intel's Integrated Performance Primitives, so Intel software toolkit should be used to compile the code.
+
+<tt>searchPositions.exe D:\Data\Ref\T2T_ D:\Temp\seed D:\Data\Reads\readData.bin D:\Temp\temp D:\out\readData_pos.bin 111011010100110101100100100101010110001 0 9999999 4</tt>
+
+<h4>Parameters</h4>
+
+<ol>
+<li>Reference folder + prefix</li>
+<li>Input folder (hash tables)</li>
+<li>Input read binary file</li>
+<li>Temp folder</li>
+<li>Output file</li>
+<li>Seed</li>
+<li>First row to process</li>
+<li>Last row to process</li>
+<li>Number of chunks</li>
+</ol>
+
 
