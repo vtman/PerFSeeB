@@ -235,7 +235,7 @@ To deal with sequences we convert them into a binary file format. We use two fil
 <ol>
   <li><b>Standard</b>. We assume that we have only four symbols (<tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>). Then each each letter can be coded as a 2-bit symbol (<tt>A=0</tt>, <tt>C=1</tt>, <tt>G=2</tt>, <tt>T=3</tt>). So each for each sequence we store its length <tt>L</tt> (usually in a separete file), the find the smallest number <tt>K</tt> such that <tt>L &leq; 4*K</tt> and generate a binary sequence of <tt>8*K</tt> bits (or, equivalently, <tt>K</tt> bytes). We pad the original sequence with <tt>A</tt> symbols if it is needed. For some problems we require <tt>L &leq; 32*K</tt>.</li>
   
-  <li><b>m128</b>. If <tt>N</tt>symbols are to be taken into account or we need to count the number of same symbols for two seqeunces, then we use a different file format. We split the sequence into groups of 32 symbols. We write this 32-symbol sequence as a 128-bit number. An <i>i</i>-th bit from the first 32 bits is 1 if the <i>i</i>-th symbol in the sequence is <b>A</b>, otherwise it is 0. The next 32 bits are for symbol <b>C</b>, then for symbol <b>G</b> and <b>T</b> respectively. If there is a symbol <b>N</b>, then all bits in <b>A</b>, <b>C</b>, <b>G</b> and <b>T</b> arrays are 0.</li>
+  <li><b>m128</b>. If <tt>N</tt>symbols are to be taken into account or we need to count the number of same symbols for two seqeunces, then we use a different file format. We split the sequence into groups of 32 symbols. We write this 32-symbol sequence as a 128-bit number. An <i>i</i>-th bit from the first 32 bits is 1 if the <i>i</i>-th symbol in the sequence is <tt>A</tt>, otherwise it is 0. The next 32 bits are for symbol <tt>C</tt>, then for symbol <tt>G</tt> and <tt>T</tt> respectively. If there is a symbol <tt>N</tt>, then all bits in <tt>A</tt>, <tt>C</tt>, <tt>G</tt> and <tt>T</tt> arrays are 0.</li>
 </ol>
 
 <hr>
@@ -321,7 +321,7 @@ Suppose we have two 32-symbol sequences (<tt>m1</tt> is shown above and <tt>m2</
   </tr>
   </table>
 
-We want to count the total number of symbols <b>A</b>, <b>C</b>, <b>G</b>, <b>T</b> that are at same positions for the both sequences. For this purcpose we perform a bitwise AND operation using <tt>_mm_and_si128</tt>, perform bitwise OR operation for <b>A</b>, <b>C</b>, <b>G</b>, <b>T</b> components and count the number of ones in the resulting 32-bit number using <tt>_mm_popcnt_u32</tt>.
+We want to count the total number of symbols <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt> that are at same positions for the both sequences. For this purcpose we perform a bitwise AND operation using <tt>_mm_and_si128</tt>, perform bitwise OR operation for <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt> components and count the number of ones in the resulting 32-bit number using <tt>_mm_popcnt_u32</tt>.
 
 <table>
   <tr>
@@ -368,18 +368,16 @@ We want to count the total number of symbols <b>A</b>, <b>C</b>, <b>G</b>, <b>T<
 
 
 
-
-
-
-
 A code requires Intel's performance primitives to be used for sorting. It can be downloaded from <a>https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html</a>
 
 Human reference genome can be dowloaded from <a>https://www.ncbi.nlm.nih.gov/assembly/GCA_009914755.4</a>
 
+The first step is to convert reference (FNA) and reads (FASTQ) files into binary files we need.
+
 <h3>fna2bin</h3>
 Convert the original FNA file into a binary file with index file (to store position of chunks)
 
-<tt>fna2bin.exe C:\Temp2\Genome\T2T\GCF_009914755.1_T2T-CHM13v2.0_genomic.fna C:\Temp2\Genome\T2T\T2T_</tt>
+<tt>fna2bin.exe C:\Genome\T2T\GCF_009914755.1_T2T-CHM13v2.0_genomic.fna C:\Genome\T2T\T2T_</tt>
 
 <h4>Parameters</h4>
 
@@ -388,14 +386,14 @@ Convert the original FNA file into a binary file with index file (to store posit
   <li>Output folder + prefix</li>
 </ol>
 
-For the above example folder <tt>C:\Temp2\Genome\T2T</tt> should exist. Two files will be created in the folder: <tt>T2T_data.bin</tt> and <tt>T2T_info.bin</tt>
+For the above example folder <tt>C:\Genome\T2T</tt> should exist. Two files will be created in the folder: <tt>T2T_data.bin</tt> and <tt>T2T_info.bin</tt>
 
 File <tt>info</tt> contains the number of symbols in each chunk. The number of chunks can be found by dividing the file size by 4. It is assumed that FNA chunks contain no other symbols except <tt>A</tt>, <tt>C</tt>, <tt>G</tt>, <tt>T</tt>. Each symbols is coded by by two bits (<tt>A = 0</tt>, <tt>C = 1</tt>, <tt>G = 2</tt>, <tt>T = 3</tt>). Each chunk is rounded up to the nearest 32 symbols. So a chunk of 700 symbols will be rounded to <tt>22 x 32 = 704</tt> symbols and saved as <tt>22 x 8 = 176</tt> bytes in the binary file.
 
 <h3>ref2m128</h3>
 Convert the binary reference file (output of <b>fna2bin</b>) into a binary file supporting <tt>__m128i</tt> numbers.
 
-<tt>ref2m128.exe C:\Temp2\Genome\T2T\T2T_</tt>
+<tt>ref2m128.exe C:\Genome\T2T\T2T_</tt>
 
 <h4>Parameters</h4>
 
@@ -434,6 +432,26 @@ Convert a binary FASTQ file (output of <b>fastq2bin</b>) to binary file supporti
   <li>Output binary file</li>
 </ol>
 
+<hr>
+Once the binary files have been created, then for each read we find a list of candidate alignment positions with respect to the reference sequence, count the maximum number of matches attained for positions within the list, get a list of such poistions and count the number of its elements. There will be a lot of temporarily files created.It is better to have a temp folder to store all such files. Ideally, this folder should be on a fast drive (like SSD or NVMe) to speed of processing. The total size of files may be around 100~GB. As not all computers have large RAM memory, there is a parameter to control the number of chunks to be used.
+
+Suppose we have already created the following folders:
+<ol>
+	<li><tt>inputRef</tt> (where reference files are, we use with the prefix for file names like <tt>C:\Genome\T2T\T2T_</tt>).</li>
+	<li><tt>tempFolder</tt> (all temporarily files will be stored there)</li>
+	<li><tt>outputFolder</tt></li>
+	<li><tt>outputPrefix</tt></li>
+	<li></li>
+</ol>
+
+Then we may use the followng sets of commands (described below in details).
+<tt>createList.exe inputRef tempFolder seed</tt>
+<tt>sortList.exe tempFolder seed</tt>
+<tt>searchPositions.exe inputRef tempFolder inputRead.bin tempFolder outputFolder/outputPrefix_pos.bin seed 0 999999999 4</tt>
+<tt>countMatch.exe inputRef outputFolder/outputPrefix_pos.bin inputRead_m128.bin outputFolder/outputPrefix_match.bin</tt>
+<tt>printMatch.exe outputFolder/outputPrefix_match.bin outputFolder/outputPrefix_stat.txt</tt>
+<hr>
+
 <h3>createList</h3>
 Create a hash table for a given seed.
 
@@ -448,6 +466,7 @@ Create a hash table for a given seed.
 </ol>
 
 A set of binary files is created (at most 65536 files) where parts of the hash table are stored. All files have <b>_orig.bin</b> suffix.
+
 
 
 <h3>sortList</h3>
