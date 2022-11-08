@@ -438,7 +438,7 @@ Once the binary files have been created, then for each read we find a list of ca
 Suppose we have already created the following folders:
 <ol>
 	<li><tt>inputRef</tt> (where reference files are, we use with the prefix for file names like <tt>C:\Genome\T2T\T2T_</tt>).</li>
-	<li><tt>inputRead<tt> (path to binary reference file, both standard and m128)</li>
+	<li><tt>inputRead</tt> (path to binary reference file, both standard and m128)</li>
 	<li><tt>tempFolder</tt> (all temporarily files will be stored there)</li>
 	<li><tt>outputFolder</tt></li>
 	<li><tt>outputPrefix</tt></li>
@@ -452,6 +452,16 @@ Then we may use the followng sets of commands (described below in details).
 <li><tt>countMatch.exe inputRef outputFolder/outputPrefix_pos.bin inputRead_m128.bin outputFolder/outputPrefix_match.bin</tt></li>
 <li><tt>printMatch.exe outputFolder/outputPrefix_match.bin outputFolder/outputPrefix_stat.txt</tt></li>
 </ol>
+
+For example,
+<ol>
+<li>createList.exe D:\Data\Ref\T2T_ D:\Data\temp 111111111100011101100100100111010011100010100101000010100110000101111000000011<li>
+<li>sortList.exe D:\Data\temp 111111111100011101100100100111010011100010100101000010100110000101111000000011</li>
+<li>searchPositions.exe D:\Data\Ref\T2T_ D:\Data\temp D:\Data\Reads\err263486.bin D:\Data\temp D:\Data\out/S1_pos.bin 111111111100011101100100100111010011100010100101000010100110000101111000000011 0 99999 16</li>
+<li>countMatch.exe D:\Data\Ref\T2T_ D:\Data\out/S1_pos.bin D:\Data\Reads\err263486_m128.bin D:\Data\out/S1_match.bin</li>
+	<li>printMatch.exe D:\Data\out/S1_match.bin D:\Data\out/S1_stat.txt</li>
+</ol>
+
 <hr>
 
 <h3>createList</h3>
