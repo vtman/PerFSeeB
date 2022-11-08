@@ -455,7 +455,7 @@ Then we may use the followng sets of commands (described below in details).
 
 For example,
 <ol>
-<li>createList.exe D:\Data\Ref\T2T_ D:\Data\temp 111111111100011101100100100111010011100010100101000010100110000101111000000011<li>
+<li>createList.exe D:\Data\Ref\T2T_ D:\Data\temp 111111111100011101100100100111010011100010100101000010100110000101111000000011</li>
 <li>sortList.exe D:\Data\temp 111111111100011101100100100111010011100010100101000010100110000101111000000011</li>
 <li>searchPositions.exe D:\Data\Ref\T2T_ D:\Data\temp D:\Data\Reads\err263486.bin D:\Data\temp D:\Data\out/S1_pos.bin 111111111100011101100100100111010011100010100101000010100110000101111000000011 0 99999 16</li>
 <li>countMatch.exe D:\Data\Ref\T2T_ D:\Data\out/S1_pos.bin D:\Data\Reads\err263486_m128.bin D:\Data\out/S1_match.bin</li>
