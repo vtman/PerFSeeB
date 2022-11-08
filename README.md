@@ -438,18 +438,20 @@ Once the binary files have been created, then for each read we find a list of ca
 Suppose we have already created the following folders:
 <ol>
 	<li><tt>inputRef</tt> (where reference files are, we use with the prefix for file names like <tt>C:\Genome\T2T\T2T_</tt>).</li>
+	<li><tt>inputRead<tt> (path to binary reference file, both standard and m128)</li>
 	<li><tt>tempFolder</tt> (all temporarily files will be stored there)</li>
 	<li><tt>outputFolder</tt></li>
 	<li><tt>outputPrefix</tt></li>
-	<li></li>
 </ol>
 
 Then we may use the followng sets of commands (described below in details).
-<tt>createList.exe inputRef tempFolder seed</tt>
-<tt>sortList.exe tempFolder seed</tt>
-<tt>searchPositions.exe inputRef tempFolder inputRead.bin tempFolder outputFolder/outputPrefix_pos.bin seed 0 999999999 4</tt>
-<tt>countMatch.exe inputRef outputFolder/outputPrefix_pos.bin inputRead_m128.bin outputFolder/outputPrefix_match.bin</tt>
-<tt>printMatch.exe outputFolder/outputPrefix_match.bin outputFolder/outputPrefix_stat.txt</tt>
+<ol>
+	<li><tt>createList.exe inputRef tempFolder seed</tt></li>
+	<li><tt>sortList.exe tempFolder seed</tt></li>
+<li><tt>searchPositions.exe inputRef tempFolder inputRead.bin tempFolder outputFolder/outputPrefix_pos.bin seed 0 999999999 4</tt></li>
+<li><tt>countMatch.exe inputRef outputFolder/outputPrefix_pos.bin inputRead_m128.bin outputFolder/outputPrefix_match.bin</tt></li>
+<li><tt>printMatch.exe outputFolder/outputPrefix_match.bin outputFolder/outputPrefix_stat.txt</tt></li>
+</ol>
 <hr>
 
 <h3>createList</h3>
